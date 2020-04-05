@@ -80,9 +80,9 @@ NormCoeff(isnan(NormCoeff))=0;
 CrSection1=zeros(30,1);
 CrSection2=0.10955.*fx.*(10.^-22);          %Cross-section corrected for fluorescensce yield of Ar ions
 CrSection=[CrSection1;CrSection2];
-Efficiency=10^-2;                           %Geometrical and Quantum Efficiency
+Efficiency=0.5;                           %Quantum Efficiency
 
-ReactionRate=0.25.*(DensTot(:,:,:).^2).*calarea_v4(NormCoeff,CrSection,Temperature,DensityMat).*Efficiency;
+ReactionRate=0.25.*(DensTot(:,:,:).^2).*calarea_v4(NormCoeff,CrSection,Temperature).*Efficiency;
 
 
 %Plot images
